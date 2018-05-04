@@ -52,7 +52,7 @@ CREATE TABLE cost
   billed_date					DATE		NULL ,
   paid_date						DATE		NULL ,
   revenue_code_concept_id		INTEGER		NULL ,
-  reveue_code_source_value		VARCHAR(50) NULL,
+  revenue_code_source_value		VARCHAR(50) NULL,
   drg_concept_id			    INTEGER		NULL,
   drg_source_value			    VARCHAR(3)	NULL ,
   payer_plan_period_id			INTEGER		NULL
