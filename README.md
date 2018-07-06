@@ -13,3 +13,9 @@ COST
   * Adds PERSON_ID
   * Adds BILLED_DATE and PAID_DATE
   * The structure of the table changes from wide to tall and leverages the new COST_CONCEPT_ID to generalize the cost table and support many cost types
+  
+SURVEY
+* [#137](https://github.com/OHDSI/CommonDataModel/issues/137)
+  * New table to the CDM
+  * Houses information related to the survey itself, all responses to the survey are housed in the OBSERVATION table
+  * The ddl for both the SURVEY table and updated OBSERVATION table are located in the SURVEY folder
