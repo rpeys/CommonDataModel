@@ -29,6 +29,6 @@ Field|Required|Type|Description
   * Typically, family members are covered under the same Plan as the Person. In those cases, the payer_source_value, plan_source_value and family_source_value are identical.
   * The contract_person_id is meant to refer to the owner of the plan, for instance, a parent who owns the plan under which the child is covered. Contract_person_id many times will be equal to person_id.
   * The fields contract_source_value and contract_concept_id justify the contract relationship.
-    * It is represented as the relationship from the person_id to contract_person_id. We will use SNOMED vocabulary of the Relationship Domain and Social Context concept class id (see (here)[http://athena.ohdsi.org/search-terms/terms?vocabulary=SNOMED&domain=Relationship&conceptClass=Social+Context&page=1&pageSize=15&query=]). For example:
-	  * Person_id is the spouse ((4132413)[http://athena.ohdsi.org/search-terms/terms/4132413]) of contract_person_id 
-	  * person_id is the child ((4285883)[http://athena.ohdsi.org/search-terms/terms/4285883]) of the contract_person_id
+    * It is represented as the relationship from the person_id to contract_person_id. We will use SNOMED vocabulary of the Relationship Domain and Social Context concept class id (see [here](http://athena.ohdsi.org/search-terms/terms?vocabulary=SNOMED&domain=Relationship&conceptClass=Social+Context&page=1&pageSize=15&query=). For example:
+	  * Person_id is the spouse ([4132413](http://athena.ohdsi.org/search-terms/terms/4132413)) of contract_person_id 
+	  * person_id is the child ([4285883](http://athena.ohdsi.org/search-terms/terms/4285883)) of the contract_person_id
