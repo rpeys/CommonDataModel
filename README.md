@@ -19,3 +19,9 @@ SURVEY
   * New table to the CDM
   * Houses information related to the survey itself, all responses to the survey are housed in the OBSERVATION table
   * The ddl for both the SURVEY table and updated OBSERVATION table are located in the SURVEY folder
+  
+LOCATION/LOCATION_HISTORY
+* [#91](https://github.com/OHDSI/CommonDataModel/issues/91)
+* [#181](https://github.com/OHDSI/CommonDataModel/issues/181)
+  * Adds country and latitude/longitude to the LOCATION table
+  * Creates the new table LOCATION_HISTORY that allows the relation of multiple locations over time to CARE_SITES, PERSONs OR PROVIDERs
