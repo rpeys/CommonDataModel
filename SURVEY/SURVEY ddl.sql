@@ -27,7 +27,7 @@
                                                                                        
 
 
-Dev script to create the COST table as described in github issue #137: https://github.com/OHDSI/CommonDataModel/issues/137
+Dev script to create the SURVEY table as described in github issue #137: https://github.com/OHDSI/CommonDataModel/issues/137
 
 last revised: 6-July-2017
 

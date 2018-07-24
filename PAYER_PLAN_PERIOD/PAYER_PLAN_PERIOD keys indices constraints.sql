@@ -25,9 +25,9 @@
  #     # #     # #     # #          #     # #     # #     #    #     # #         # #       #  #    ## #     # #        #   #  #       #     # 
  ####### #     # ####### #           #####  ######  #     #    ######  #######    #       ### #     # ######  ####### #     # #######  ##### 
 
-Dev script to create the required indexes for the recently accepted SURVEY table proposal as described in github issue #137: https://github.com/OHDSI/CommonDataModel/issues/137
+Dev script to create the required indexes for the recently accepted PAYER_PLAN_PERIOD table proposal as described in github issue #107: https://github.com/OHDSI/CommonDataModel/issues/107
 
-last revised: 7-July-2018
+last revised: 24-July-2018
 
 author:  Clair Blacketer
 
@@ -37,31 +37,33 @@ description:  These indices, primary keys and constraints are considered a minim
 
 /*Primary Key*/
 
-ALTER TABLE survey ADD CONSTRAINT xpk_survey PRIMARY KEY NONCLUSTERED ( survey_occurrence_id ) ;
+ALTER TABLE payer_plan_period ADD CONSTRAINT xpk_payer_plan_period PRIMARY KEY NONCLUSTERED ( payer_plan_period_id ) ;
 
 /*Indices and Constraints*/
 
-CREATE CLUSTERED INDEX idx_survey_person_id ON survey (person_id ASC);
+CREATE CLUSTERED INDEX idx_period_person_id ON payer_plan_period (person_id ASC);
 
 
-ALTER TABLE survey ADD CONSTRAINT fpk_survey_person FOREIGN KEY (person_id)  REFERENCES person (person_id);
+ALTER TABLE payer_plan_period ADD CONSTRAINT fpk_payer_plan_period FOREIGN KEY (person_id)  REFERENCES person (person_id);
 
-ALTER TABLE survey ADD CONSTRAINT fpk_survey_concept FOREIGN KEY (survey_concept_id)  REFERENCES concept (concept_id);
+ALTER TABLE payer_plan_period ADD CONSTRAINT fpk_contract_person FOREIGN KEY (contract_person_id) REFERENCES person (person_id);
 
-ALTER TABLE survey ADD CONSTRAINT fpk_survey_provider FOREIGN KEY (provider_id) REFERENCES provider (provider_id);
+ALTER TABLE payer_plan_period ADD CONSTRAINT fpk_payer_concept_id FOREIGN KEY (payer_concept_id) REFERENCES concept (concept_id);
 
-ALTER TABLE survey ADD CONSTRAINT fpk_survey_assist FOREIGN KEY (assisted_concept_id)  REFERENCES concept (concept_id);
+ALTER TABLE payer_plan_period ADD CONSTRAINT fpk_payer_source_concept FOREIGN KEY (payer_source_concept_id) REFERENCES concept (concept_id);
 
-ALTER TABLE survey ADD CONSTRAINT fpk_respondent_type FOREIGN KEY (respondent_type_concept_id)  REFERENCES concept (concept_id);
+ALTER TABLE payer_plan_period ADD CONSTRAINT fpk_plan_concept_id FOREIGN KEY (plan_concept_id) REFERENCES concept (concept_id);
 
-ALTER TABLE survey ADD CONSTRAINT fpk_survey_timing FOREIGN KEY (timing_concept_id)  REFERENCES concept (concept_id);
+ALTER TABLE payer_plan_period ADD CONSTRAINT fpk_plan_source_concept FOREIGN KEY (plan_source_concept_id) REFERENCES concept (concept_id);
 
-ALTER TABLE survey ADD CONSTRAINT fpk_collection_method FOREIGN KEY (collection_method_concept_id)  REFERENCES concept (concept_id);
+ALTER TABLE payer_plan_period ADD CONSTRAINT fpk_contract_concept_id FOREIGN KEY (contract_concept_id) REFERENCES concept (concept_id);
 
-ALTER TABLE survey ADD CONSTRAINT fpk_survey_source FOREIGN KEY (survey_source_concept_id) REFERENCES concept (concept_id);
+ALTER TABLE payer_plan_period ADD CONSTRAINT fpk_contract_source_concept FOREIGN KEY (contract_source_concept_id) REFERENCES concept (concept_id);
 
-ALTER TABLE survey ADD CONSTRAINT fpk_validation FOREIGN KEY (validated_survey_concept_id) REFERENCES concept (concept_id);
+ALTER TABLE payer_plan_period ADD CONSTRAINT fpk_sponsor_concept_id FOREIGN KEY (sponsor_concept_id) REFERENCES concept (concept_id);
 
-ALTER TABLE survey ADD CONSTRAINT fpk_visit FOREIGN KEY (visit_occurrence_id) REFERENCES visit (visit_occurrence_id);
+ALTER TABLE payer_plan_period ADD CONSTRAINT fpk_sponsor_source_concept FOREIGN KEY (sponsor_source_concept_id) REFERENCES concept (concept_id);
 
-ALTER TABLE survey ADD CONSTRAINT fpk_response_visit FOREIGN KEY (response_to_visit_occurrence_id) REFERENCES visit (visit_occurrence_id);
+ALTER TABLE payer_plan_period ADD CONSTRAINT fpk_stop_reason_concept FOREIGN KEY (stop_reason_concept_id) REFERENCES concept (concept_id);
+
+ALTER TABLE payer_plan_period ADD CONSTRAINT fpk_stop_reason_source FOREIGN KEY (stop_reason_source_concept_id) REFERENCES concept (concept_id);
