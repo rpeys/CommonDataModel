@@ -296,7 +296,7 @@ CREATE TABLE visit_occurrence
   visit_type_concept_id			INTEGER			NOT NULL ,
   provider_id					BIGINT			NULL,
   care_site_id					BIGINT			NULL,
-  visit_source_value			VARCHAR(100)		NULL,
+  visit_source_value			VARCHAR(200)		NULL,
   visit_source_concept_id		INTEGER			NOT NULL ,
   admitted_from_concept_id      INTEGER     	NOT NULL ,   
   admitted_from_source_value    VARCHAR(50) 	NULL ,
